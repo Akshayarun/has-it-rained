@@ -2,7 +2,9 @@ var http = require('http'),
 	fs = require('fs'),
 	dateFormat = require('dateformat'),
 	nodemailer = require('nodemailer'),
-	transport = nodemailer.createTransport('sendmail'),
+	transport = nodemailer.createTransport('sendmail', {
+		path: '/usr/sbin/sendmail'
+	}),
 	key = '18b79e98455a935a',
 	feature = 'history_',
 	query = 'q/38.905222,-76.984467.json',
